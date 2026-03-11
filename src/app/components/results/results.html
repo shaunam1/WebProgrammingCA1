@@ -1,0 +1,47 @@
+@if (movieService.movies(); as movie){
+        @for(movieData of movieService.movies();track movieData;){
+        <div class="card custom-card">
+            
+            <img class="cardImage" src="{{movieData.Poster}}" alt="{{movieData.Title}} poster">
+            <div class="card-body">
+                <h2>
+                {{ movieData.Title}}
+                
+            </h2>
+            <p>
+                {{movieData.Year}}  
+            </p>
+            <p>
+                {{movieData.imdbID}}
+            </p>
+            <a class="link" [routerLink]="['/movie',  movieData.imdbID]">View Details</a>
+            </div>
+            
+        </div>
+    }
+    <div>
+        <button type="button" class="btn btn-primary custom-btn" (click)="previousPage()">Previous</button>
+    
+        <button type="button" class="btn btn-primary custom-btn" (click)="nextPage()">Next</button>
+ 
+    </div>
+    }
+   
+    
+    
+
+<!--@for (movieData of movieService.movies();track movieData;){
+    <div>
+        {{movieData.Title}}
+        {{movieData.Year}}
+        {{movieData.imdbID}}
+        <a [routerLink]="['/movie',  movieData.imdbID]">View Details</a>
+    </div>
+    
+}
+<div>
+        <button type="button" class="btn btn-primary custom-btn" (click)="previousPage()">Previous</button>
+    
+        <button type="button" class="btn btn-primary custom-btn" (click)="nextPage()">Next</button>
+ 
+    </div>-->

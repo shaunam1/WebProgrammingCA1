@@ -1,0 +1,49 @@
+@if (movieService.movie(); as movie){
+    @if (movie.Response === "True"){
+        <div class="results">
+            <h2>
+                {{ movie.Title}}
+                
+            </h2>
+            <p>
+                {{movie.Year}}
+            </p>
+            <img src="{{movie.Poster}}" alt="{{movie.Title}} poster">
+            <p>
+                {{movie.Director}}
+            </p>
+            <p>
+                {{movie.Actor}}
+            </p>
+            <p>
+                {{movie.imdbRating}}
+            </p>
+            <p>
+                {{movie.Rated}}
+            </p>
+            <p>
+                Released: {{movie.Released}}
+            </p>
+            <p>
+                Runtime: {{movie.Runtime}}
+            </p>
+            <p>
+                {{movie.Plot}}
+            </p>
+            <p>
+                {{movie.Genre}}
+            </p>
+            <p>
+                {{movie.Awards}}
+            </p>
+        </div>
+    }
+    @else{
+        <div>
+            <h2>
+                {{movie.Error}}
+            </h2>
+        </div>
+    }
+}
+    

@@ -1,0 +1,16 @@
+<div class="row">
+    <div>
+        <h2 class="centreHeading">Search Movie</h2>
+        <!--When submitted getMovie() method is triggered-->
+        <div class="searchDiv">
+            <form (ngSubmit)="get(title)">
+                <label for="title" class="leftAlign">Title</label>
+                <input type="text" class="form-control" [(ngModel)]="title" id="title" name="title"><br>
+            
+            <button type="submit" class="btn btn-primary custom-btn">Search</button>
+            
+        </form>
+        </div>
+        
+    </div>
+</div>
